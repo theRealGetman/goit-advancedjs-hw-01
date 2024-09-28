@@ -1,0 +1,36 @@
+:root {
+  --items-per-row: 3;
+  --vertical-gap: 24px;
+  --horizontal-gap: 24px;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--vertical-gap);
+  column-gap: var(--horizontal-gap);
+  padding: 24px;
+}
+
+.gallery-item {
+  width: calc(
+    (100% - (var(--horizontal-gap) * (var(--items-per-row) - 1))) /
+      var(--items-per-row)
+  );
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
